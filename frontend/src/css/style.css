@@ -1,0 +1,652 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar Container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff; /* White background */
+  padding: 18px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  color: #333333; /* Dark gray for text */
+}
+
+/* Logo Styling */
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #0073e6; /* Vibrant blue for the logo */
+  font-family: "Roboto", sans-serif;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  color: #005bb5; /* Slightly darker blue on hover */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* Navbar Links */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar-links li {
+  display: inline-block;
+}
+
+.navbar-links .nav-link {
+  text-decoration: none;
+  color: #555555; /* Medium gray for links */
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links .nav-link:hover {
+  background-color: #f0f8ff; /* Light blue background on hover */
+  color: #0073e6; /* Vibrant blue text on hover */
+  box-shadow: 0 4px 8px rgba(0, 115, 230, 0.2); /* Subtle glow */
+}
+
+/* Logout Link Styling */
+.navbar-links .logout-link {
+  background-color: #f44336; /* Red for logout */
+  color: #ffffff; /* White text for logout */
+  padding: 8px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.navbar-links .logout-link:hover {
+  background-color: #e53935; /* Slightly darker red on hover */
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3); /* Subtle red glow */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-logo {
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .navbar-links {
+    flex-basis: 100%;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .navbar-links .nav-link {
+    padding: 8px 20px;
+    font-size: 1.1rem;
+  }
+}
+
+
+/* DataTable */
+
+/* General Reset */
+
+/* Card Style */
+.card {
+  padding: 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Typography Styling */
+.card h6 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333; /* Dark text color */
+}
+
+/* Dropdown Selector */
+.select-dropdown {
+  min-width: 200px;
+  padding: 8px 12px;
+  border: 1px solid #ccc; /* Border for definition */
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff; /* White background */
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.select-dropdown:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Subtle focus glow */
+}
+
+/* Loading Indicator */
+.loading-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loading-container .circular-progress {
+  color: #007bff; /* Blue spinner */
+}
+
+.loading-container p {
+  font-size: 1rem;
+  color: #666; /* Subtle text */
+}
+
+/* Error Message */
+.error-message {
+  color: #ff4d4f; /* Red for error messages */
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Data Table */
+.table-container {
+  margin-top: 20px;
+  background-color: #fff; /* White table background */
+  border-radius: 10px;
+  overflow: hidden; /* Ensure no overflow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th {
+  background-color: #f5f5f5; /* Blue header background */
+  color: #555555; /* White text */
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+  font-size: 0.9rem;
+}
+
+.table-container td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd; /* Light border for row separation */
+  font-size: 0.9rem;
+  color: #555; /* Subtle text color */
+}
+
+.table-container tr:nth-child(even) {
+  background-color: #f7f7f7; /* Light gray for alternating rows */
+}
+
+.table-container tr:hover {
+  background-color: #f1f1f1; /* Highlight on hover */
+}
+
+/* View More Button */
+.view-more-button {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.view-more-button button {
+  background-color: #007bff; /* Blue button */
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more-button button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Slight shadow on hover */
+}
+
+/* No Data Available Message */
+.no-data-message {
+  text-align: center;
+  font-size: 1rem;
+  color: #888; /* Subtle gray */
+  margin-top: 20px;
+}
+
+/* Dropdown Section Styling */
+.dropdown-section {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Adds space between the dropdowns and button */
+  margin-bottom: 20px;
+}
+
+/* Individual Dropdown Styling */
+.dropdown {
+  min-width: 150px;
+  height: 40px; /* Set a consistent height */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center; /* Center text vertically */
+}
+
+/* Dropdown Hover and Focus Effects */
+.dropdown:hover {
+  border-color: #1976d2; /* Material-UI primary color */
+}
+
+.dropdown:focus-within {
+  outline: none;
+  box-shadow: 0 0 4px rgba(25, 118, 210, 0.5); /* Subtle blue shadow */
+}
+
+/* Compare Ads Button Styling */
+.compare-ads-button {
+  background-color: #1976d2; /* Material-UI primary color */
+  color: #fff;
+  font-weight: bold;
+  border: 1px solid #1976d2; /* Match the border with dropdown */
+  border-radius: 5px;
+  padding: 0; /* Remove default padding */
+  height: 40px; /* Match dropdown height */
+  min-width: 150px; /* Match dropdown width */
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center; /* Center text vertically */
+  justify-content: center; /* Center text horizontally */
+}
+
+/* Compare Ads Button Hover */
+.compare-ads-button:hover {
+  background-color: #005bb5; /* Slightly darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Compare Ads Button Disabled */
+.compare-ads-button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.insights-heading {
+  font-size: 1.5rem; /* Slightly larger font size */
+  font-weight: 600; /* Semi-bold font */
+  color: #333; /* Dark gray color for better readability */
+  text-align: center; /* Center align the text */
+  margin-bottom: 27px; /* Space below the heading */
+}
+
+/* adAnalytic */
+
+.ads-analytics-container {
+  padding: 20px;
+  text-align: center;
+  font-family: "Roboto", sans-serif; /* Material-UI default font */
+}
+
+.button-container {
+  margin-bottom: 30px;
+}
+
+.toggle-button {
+  background-color: #1976d2; /* Material-UI primary color */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #125a9e; /* Darker shade of blue */
+  transform: scale(1.05);
+}
+
+.active-button {
+  background-color: #0b3c73; /* Active button style */
+}
+
+.section-heading {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333; /* Dark gray for better readability */
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  /* text-align: center; */
+}
+
+.card-title {
+  /* font-weight: bold !important; */
+}
+/* lower */
+
+/* lower */
+
+/* Shared Styles */
+.top-performance-ads-card,
+.lower-performance-ads-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  color: #333;
+}
+
+.region-filter {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 16px;
+}
+
+.region-select {
+  font-size: 16px;
+  padding: 8px;
+}
+
+.ads-table-container {
+  margin-top: 16px;
+}
+
+.table-header {
+  font-weight: bold;
+  background-color: #f5f5f5;
+}
+
+.table-row {
+  background-color: #fff;
+}
+
+.table-cell {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.loading-text,
+.error-text,
+.no-data-text {
+  text-align: center;
+  color: #999;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 30px;
+    background-color: #1a1a2e;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: none; /* Initially hidden */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show links when toggled */
+  }
+
+  nav .logo {
+    flex: 1;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #ffffff;
+  }
+}
+
+/* Media query for screens with width 1191px or less */
+@media (max-width: 1191px) {
+  .age-group-card {
+    padding: 10px; /* Reduce padding for smaller screens */
+    text-align: center;
+  }
+
+  .card-title {
+    font-size: 18px; /* Reduce font size for title */
+    margin-bottom: 12px; /* Adjust margin */
+  }
+
+  .ab-testing-dropdown {
+    width: 100%; /* Make the dropdown take full width */
+    margin-bottom: 20px;
+    display: block; /* Ensure the dropdown takes a new line */
+  }
+
+  .chart-container {
+    width: 100%; /* Allow chart to take full width */
+    height: auto; /* Adjust height dynamically */
+    max-width: 400px; /* Limit the maximum width of the chart */
+    margin: 0 auto; /* Center the chart */
+  }
+
+  .top-age-group-info {
+    font-size: 16px; /* Adjust font size for the text */
+    color: #228b22; /* Use a consistent green color */
+  }
+
+  /* Ensure that dropdowns and buttons stack properly on smaller screens */
+  .dropdown-section {
+    display: flex;
+    flex-direction: column; /* Stack dropdowns and buttons vertically */
+    align-items: center;
+  }
+
+  .dropdown {
+    width: 80%; /* Adjust the width of the dropdowns */
+    margin-bottom: 12px; /* Add spacing between dropdowns */
+  }
+
+  .compare-ads-button {
+    width: 80%; /* Adjust the button width to match dropdowns */
+    margin-top: 20px; /* Add some space above the button */
+  }
+}
+
+/* top */
+
+
+/* Sidebar container styling */
+/* Sidebar with white background *//* Sidebar styling */
+/* General reset and container settings */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Dashboard container styling */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Navbar styling */
+
+
+/* Sidebar container styling *//* Sidebar container styling */
+.sidebar {
+  width: 80px; /* Adjusted initial width */
+  background-color: white;
+  color: #333;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  height: calc(100vh - 60px);
+  box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 0 8px 8px 0;
+  padding-top: 20px;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+/* Sidebar header styling (hidden initially) */
+.sidebar-header {
+  display: none; /* Hide the header initially */
+  padding: 15px;
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Sidebar menu styling */
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar menu items */
+.sidebar-menu li {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+
+/* Sidebar link styling (only icon initially) */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  text-decoration: none;
+  color: #555; /* Text color */
+  font-size: 18px; /* Text size */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+}
+
+/* Sidebar icon styling */
+.sidebar-icon {
+  font-size: 22px; /* Icon size */
+  margin-right: 12px; /* Space between icon and text */
+}
+
+/* Sidebar text styling (hidden by default) */
+.sidebar-text {
+  font-size: 18px; /* Text size */
+  display: none; /* Initially hide the text */
+  color: #555; /* Text color */
+}
+
+/* Hover effect on sidebar (expand width to show text and header) */
+.sidebar:hover {
+  width: 200px; /* Expand the sidebar to 200px */
+}
+
+.sidebar:hover .sidebar-header {
+  display: block; /* Show the header when sidebar is expanded */
+}
+
+.sidebar:hover .sidebar-text {
+  display: inline-block; /* Show the text when sidebar is expanded */
+}
+
+.sidebar-link:hover {
+  background-color: #dbe4e8; /* Light gray background on hover */
+  color: #333; /* Dark text color on hover */
+}
+
+/* Active link styling */
+.sidebar-link.active {
+  background-color: #ddd; /* Active link background color */
+  color: #333;
+  font-weight: bold;
+}
+
+/* Content container styling (fixed layout) */
+.content-container {
+  margin-left: 80px; /* Space for the sidebar */
+  padding: 20px;
+  width: calc(100% - 80px); /* Fixed width regardless of sidebar state */
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+/* No size adjustment on sidebar hover */
+.sidebar:hover + .content-container {
+  margin-left: 80px; /* Keep the margin fixed */
+  width: calc(100% - 80px); /* Keep the width fixed */
+}
+
+/* Stylish sidebar items */
+.sidebar-link:hover .sidebar-icon {
+  color: #3498db; /* Change icon color on hover */
+}
+
+.sidebar-link:hover .sidebar-text {
+  color: #3498db; /* Change text color on hover */
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 60px; /* Adjust width for mobile (show only icons) */
+  }
+
+  .content-container {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .sidebar-header h2 {
+    font-size: 20px;
+  }
+
+  .sidebar-link {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .sidebar-icon {
+    font-size: 18px;
+  }
+
+  .sidebar-text {
+    display: none; /* Hide text on smaller screens */
+  }
+
+  .sidebar-link:hover .sidebar-text {
+    display: inline-block; /* Show text on hover */
+  }
+}
